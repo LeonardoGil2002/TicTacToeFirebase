@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="home_button_create_game">Crear Partida</string>
+    <string name="home_button_search_game">Buscar Partida por ID</string>
+    <string name="game_lobby_id">ID Lobby: </string>
+    <string name="game_turn">Turno: </string>
+    <string name="game_tictactoe_x">X</string>
+    <string name="game_tictactoe_o">O</string>
+</resources>
