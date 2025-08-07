@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import java.util.UUID
 import javax.inject.Inject
 
 @HiltViewModel
@@ -15,8 +16,21 @@ class HomeViewModel @Inject constructor(private val firebaseService: FirebaseSer
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState
 
-    fun onCreateGame() {
-        firebaseService.createGame(createNewGame())
+    fun onCreateGame(navigateToGame: (String, String, Boolean) -> Unit) {
+        val game = createNewGame()
+        val gameId = firebaseService.createGame(game)
+        val userId = game.player1?.userId.orEmpty()
+        val owner = true
+        navigateToGame(gameId, userId, owner)
+    }
+
+    fun onSearchGame(gameId: String, navigateToGame: (String, String, Boolean) -> Unit) {
+        val owner = false
+        navigateToGame(gameId, createUserId(), owner)
+    }
+
+    private fun createUserId(): String{
+        return UUID.randomUUID().toString()
     }
 
     private fun createNewGame():GameModel{
@@ -33,10 +47,6 @@ class HomeViewModel @Inject constructor(private val firebaseService: FirebaseSer
         _uiState.update {
             it.copy(searchGameValue = it.searchGameValue)
         }
-    }
-
-    fun onSearchGame() {
-
     }
 
 }

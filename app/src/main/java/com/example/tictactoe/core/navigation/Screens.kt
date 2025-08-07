@@ -6,4 +6,4 @@ import kotlinx.serialization.Serializable
 object Home
 
 @Serializable
-object Game
+data class Game(val gameId:String, val userId:String, val owner:Boolean)
