@@ -28,4 +28,10 @@ class FirebaseService @Inject constructor(private val reference: DatabaseReferen
         }
     }
 
+    fun updateGame(gameModel: GameModel){
+        if(gameModel.gameId != null){
+            reference.child(PATH).child(gameModel.gameId).setValue(gameModel)
+        }
+    }
+
 }

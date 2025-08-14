@@ -32,7 +32,7 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.weight(1f))
         TextField(
-            onValueChange = { homeViewModel.onValueChangeSearchGame() },
+            onValueChange = { homeViewModel.onValueChangeSearchGame(it) },
             value = uiState.searchGameValue
         )
         Spacer(Modifier.height(8.dp))

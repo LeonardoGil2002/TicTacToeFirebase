@@ -3,7 +3,9 @@
     <string name="home_button_create_game">Crear Partida</string>
     <string name="home_button_search_game">Buscar Partida por ID</string>
     <string name="game_lobby_id">ID Lobby: </string>
-    <string name="game_turn">Turno: </string>
-    <string name="game_tictactoe_x">X</string>
-    <string name="game_tictactoe_o">O</string>
+    <string name="game_turn_waiting_player_2">Esperando jugador 2</string>
+    <string name="game_your_turn">Tu turno</string>
+    <string name="game_rival_turn">Turno del rival</string>
+    <string name="game_player_winner">Ha ganado el jugador %s</string>
+    <string name="game_draw">El juego ha terminado en empate</string>
 </resources>

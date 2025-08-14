@@ -43,9 +43,9 @@ class HomeViewModel @Inject constructor(private val firebaseService: FirebaseSer
         )
     }
 
-    fun onValueChangeSearchGame() {
+    fun onValueChangeSearchGame(searchGameValue: String) {
         _uiState.update {
-            it.copy(searchGameValue = it.searchGameValue)
+            it.copy(searchGameValue = searchGameValue)
         }
     }
 

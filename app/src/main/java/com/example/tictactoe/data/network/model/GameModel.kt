@@ -3,7 +3,7 @@ package com.example.tictactoe.data.network.model
 import com.example.tictactoe.ui.response.GameResponse
 import com.example.tictactoe.ui.response.PlayerResponse
 import com.example.tictactoe.ui.response.PlayerType
-import java.util.Calendar
+import java.util.UUID
 
 data class GameModel(
     val board: List<Int?>? = null,
@@ -24,7 +24,7 @@ data class GameModel(
 }
 
 data class PlayerModel(
-    val userId: String? = Calendar.getInstance().timeInMillis.hashCode().toString(),
+    val userId: String? = UUID.randomUUID().toString(),
     val playerType: Int? = null
 ){
     fun toResponse(): PlayerResponse{
